@@ -14,7 +14,7 @@ public class Ambiente {
     private Long id;
 
     @Column(name = "AMBIENTE")
-    private String ambiente;
+    private String ambienteDescricao;
 
     @Column(name = "AMBIENTE_RESUMIDO")
     private String ambienteResumido;
