@@ -1,9 +1,13 @@
 package com.elbertribeiro.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "TAB_AMBIENTE", schema = "DEPLOY")
+@Getter
+@Setter
 public class Ambiente {
     @Id
     @Column(name = "AMBIENTE_ID", columnDefinition = "NUMBER")
@@ -14,28 +18,4 @@ public class Ambiente {
 
     @Column(name = "AMBIENTE_RESUMIDO")
     private String ambienteResumido;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getAmbiente() {
-        return ambiente;
-    }
-
-    public void setAmbiente(String ambiente) {
-        this.ambiente = ambiente;
-    }
-
-    public String getAmbienteResumido() {
-        return ambienteResumido;
-    }
-
-    public void setAmbienteResumido(String ambienteResumido) {
-        this.ambienteResumido = ambienteResumido;
-    }
 }
