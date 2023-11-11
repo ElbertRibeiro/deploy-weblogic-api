@@ -16,13 +16,16 @@ public class Aplicacao {
     @Column(name = "APLICACAO_DESCRICAO")
     private String nomeAplicacao;
 
-    @Column(name = "APLICACAO_SERVIDOR_DEV")
-    private Long servidorDesenvolvimento;
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "SERVIDOR_ID", name = "APLICACAO_SERVIDOR_DEV")
+    private Servidor servidorDesenvolvimento;
 
-    @Column(name = "APLICACAO_SERVIDOR_HOM")
-    private Long servidorHomologacao;
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "SERVIDOR_ID", name = "APLICACAO_SERVIDOR_HOM")
+    private Servidor servidorHomologacao;
 
-    @Column(name = "APLICACAO_SERVIDOR_PROD")
-    private Long servidorProducao;
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "SERVIDOR_ID", name = "APLICACAO_SERVIDOR_PROD")
+    private Servidor servidorProducao;
 
 }
