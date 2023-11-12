@@ -1,6 +1,5 @@
 package com.elbertribeiro.deploy;
 
-import com.elbertribeiro.aplicacao.Aplicacao;
 import org.springframework.context.ApplicationEvent;
 
 public class DeployEvent extends ApplicationEvent {
