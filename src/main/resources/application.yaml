@@ -10,9 +10,9 @@ spring:
 topic:
   name:
     producer: deploy.ambiente.dev
-    group_id: teste
 
 deploy:
+  grupo-id: ${artifactId}
   ambiente:
     dev: deploy.ambiente.dev
     hom: deploy.ambiente.hom

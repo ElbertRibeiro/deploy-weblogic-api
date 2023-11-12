@@ -26,7 +26,7 @@ public class Consumer {
     @Value("${deploy.ambiente.prod}")
     private String topicNameProd;
 
-    @KafkaListener(topics = "${deploy.ambiente.dev}", groupId = "${topic.name.group_id}")
+    @KafkaListener(topics = "${deploy.ambiente.dev}", groupId = "${deploy.grupo-id}")
     public void consumeDev(ConsumerRecord<String, String> payload) {
         logger.info(TOPIC, topicNameDev);
         logger.info(KEY, payload.key());
@@ -35,7 +35,7 @@ public class Consumer {
         logger.info(ORDER, payload.value());
     }
 
-    @KafkaListener(topics = "${deploy.ambiente.hom}", groupId = "${topic.name.group_id}")
+    @KafkaListener(topics = "${deploy.ambiente.hom}", groupId = "${deploy.grupo-id}")
     public void consumeHom(ConsumerRecord<String, String> payload) {
         logger.info(TOPIC, topicNameHom);
         logger.info(KEY, payload.key());
@@ -44,7 +44,7 @@ public class Consumer {
         logger.info(ORDER, payload.value());
     }
 
-    @KafkaListener(topics = "${deploy.ambiente.prod}", groupId = "${topic.name.group_id}")
+    @KafkaListener(topics = "${deploy.ambiente.prod}", groupId = "${deploy.grupo-id}")
     public void consumeProd(ConsumerRecord<String, String> payload) {
         logger.info(TOPIC, topicNameProd);
         logger.info(KEY, payload.key());
