@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class Consumer {
-    //TODO: se o processamento der errado, publicar o evento de erro em uma tabela usando event do java
 
     private static final Logger logger = LoggerFactory.getLogger(Consumer.class);
 
