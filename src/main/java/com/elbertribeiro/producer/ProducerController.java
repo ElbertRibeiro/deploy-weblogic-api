@@ -27,4 +27,12 @@ public class ProducerController {
         kafkaTemplate.send(topicName, message);
         return message;
     }
+
+    @GetMapping("erro")
+    public String sendErro() {
+        var message = "gestao-rh1";
+        logger.info("Payload enviado: {}", message);
+        kafkaTemplate.send(topicName, message);
+        return message;
+    }
 }
