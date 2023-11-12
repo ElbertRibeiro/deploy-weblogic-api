@@ -2,6 +2,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+  datasource:
+    url: jdbc:h2:mem:deploy-weblogic-api-db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
   kafka:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -12,7 +17,7 @@ topic:
     producer: deploy.ambiente.dev
 
 deploy:
-  grupo-id: ${artifactId}
+  grupo-id: deploy-weblogic-api
   ambiente:
     dev: deploy.ambiente.dev
     hom: deploy.ambiente.hom
