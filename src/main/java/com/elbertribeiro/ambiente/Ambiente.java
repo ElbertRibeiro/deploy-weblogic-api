@@ -1,4 +1,4 @@
-package com.elbertribeiro.model;
+package com.elbertribeiro.ambiente;
 
 import jakarta.persistence.*;
 import lombok.Getter;

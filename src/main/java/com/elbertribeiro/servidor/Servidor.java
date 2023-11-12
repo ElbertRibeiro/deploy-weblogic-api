@@ -1,5 +1,6 @@
-package com.elbertribeiro.model;
+package com.elbertribeiro.servidor;
 
+import com.elbertribeiro.ambiente.Ambiente;
 import jakarta.persistence.*;
 
 @Entity

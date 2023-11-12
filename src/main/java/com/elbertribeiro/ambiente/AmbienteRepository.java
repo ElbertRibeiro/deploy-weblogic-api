@@ -1,6 +1,5 @@
-package com.elbertribeiro.repository;
+package com.elbertribeiro.ambiente;
 
-import com.elbertribeiro.model.Ambiente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

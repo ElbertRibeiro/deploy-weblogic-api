@@ -1,9 +1,5 @@
-package com.elbertribeiro.controller;
+package com.elbertribeiro.servidor;
 
-import com.elbertribeiro.model.Ambiente;
-import com.elbertribeiro.model.Servidor;
-import com.elbertribeiro.repository.AmbienteRepository;
-import com.elbertribeiro.repository.ServidorRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
