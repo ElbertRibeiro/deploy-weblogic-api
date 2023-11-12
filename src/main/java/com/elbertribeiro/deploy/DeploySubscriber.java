@@ -11,6 +11,8 @@ public class DeploySubscriber implements ApplicationListener<DeployEvent> {
 
     @Override
     public void onApplicationEvent(DeployEvent event) {
-        logger.info("Escutando evento de deploy da aplicacao: {}", event.getAplicacao().getNomeAplicacao());
+        logger.info("Escutando evento de deploy");
+        logger.info("aplicacao: {}", event.getAplicacao().getNomeAplicacao());
+        logger.info("servidor: {}", event.getAplicacao().getServidor());
     }
 }
