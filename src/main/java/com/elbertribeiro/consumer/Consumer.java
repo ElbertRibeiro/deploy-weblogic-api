@@ -1,5 +1,6 @@
 package com.elbertribeiro.consumer;
 
+import com.elbertribeiro.aplicacao.AplicacaoService;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +13,17 @@ public class Consumer {
 
     private static final Logger logger = LoggerFactory.getLogger(Consumer.class);
 
+    private final AplicacaoService aplicacaoService;
+
+    public Consumer(AplicacaoService aplicacaoService) {
+        this.aplicacaoService = aplicacaoService;
+    }
+
     @KafkaListener(topics = "${deploy.ambiente.dev}", groupId = "${deploy.grupo-id}")
     public void consumeDev(ConsumerRecord<String, String> payload) {
         this.loggerConsumer(payload);
+        var aplicacao = aplicacaoService.buscaAplicacao(payload.value());
+        logger.info("Endereço de Deploy: {}", aplicacao.getServidorDesenvolvimento().getEndereco());
     }
 
     @KafkaListener(topics = "${deploy.ambiente.hom}", groupId = "${deploy.grupo-id}")

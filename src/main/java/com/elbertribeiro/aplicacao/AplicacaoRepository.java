@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AplicacaoRepository extends JpaRepository<Aplicacao, Long> {
+    Aplicacao findAplicacaoByNomeAplicacao(String nomeAplicacao);
 }
