@@ -2,13 +2,9 @@ package com.elbertribeiro.aplicacao;
 
 import com.elbertribeiro.servidor.Servidor;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Table(name = "TAB_APLICACAO", schema = "DEPLOY")
-@Getter
-@Setter
 public class Aplicacao {
     @Id
     @Column(name = "APLICACAO_ID", columnDefinition = "NUMBER")
@@ -29,4 +25,43 @@ public class Aplicacao {
     @JoinColumn(referencedColumnName = "SERVIDOR_ID", name = "APLICACAO_SERVIDOR_PROD")
     private Servidor servidorProducao;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNomeAplicacao() {
+        return nomeAplicacao;
+    }
+
+    public void setNomeAplicacao(String nomeAplicacao) {
+        this.nomeAplicacao = nomeAplicacao;
+    }
+
+    public Servidor getServidorDesenvolvimento() {
+        return servidorDesenvolvimento;
+    }
+
+    public void setServidorDesenvolvimento(Servidor servidorDesenvolvimento) {
+        this.servidorDesenvolvimento = servidorDesenvolvimento;
+    }
+
+    public Servidor getServidorHomologacao() {
+        return servidorHomologacao;
+    }
+
+    public void setServidorHomologacao(Servidor servidorHomologacao) {
+        this.servidorHomologacao = servidorHomologacao;
+    }
+
+    public Servidor getServidorProducao() {
+        return servidorProducao;
+    }
+
+    public void setServidorProducao(Servidor servidorProducao) {
+        this.servidorProducao = servidorProducao;
+    }
 }
