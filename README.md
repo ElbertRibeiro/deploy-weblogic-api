@@ -4,4 +4,4 @@ O objetivo deste projeto é permitir o deploy em um servidor weblogic em qualque
 eventos com kafka.
 
 
-[ ] - criar websocket para listar eventos pendentes de consumo
+- [ ] criar websocket para listar eventos pendentes de consumo
