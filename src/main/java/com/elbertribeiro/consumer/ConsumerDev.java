@@ -8,9 +8,9 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ArquivoEvent {
+public class ConsumerDev {
 
-    private static final Logger logger = LoggerFactory.getLogger(ArquivoEvent.class);
+    private static final Logger logger = LoggerFactory.getLogger(ConsumerDev.class);
 
     @Value("${topic.name.consumer}")
     private String topicName;

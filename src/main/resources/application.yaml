@@ -9,6 +9,6 @@ spring:
 
 topic:
   name:
-    producer: topico.comando.teste
-    consumer: topico.comando.teste
+    producer: deploy.ambiente.dev
+    consumer: deploy.ambiente.dev
     group_id: teste
