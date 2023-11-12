@@ -3,13 +3,13 @@ package com.elbertribeiro.deploy;
 import org.springframework.context.ApplicationEvent;
 
 public class DeployEvent extends ApplicationEvent {
-    private final Deploy deploy;
-    public DeployEvent(Object source, Deploy deploy) {
+    private final DeployDto deploy;
+    public DeployEvent(Object source, DeployDto deploy) {
         super(source);
         this.deploy = deploy;
     }
 
-    public Deploy getAplicacao() {
+    public DeployDto getAplicacao() {
         return deploy;
     }
 }

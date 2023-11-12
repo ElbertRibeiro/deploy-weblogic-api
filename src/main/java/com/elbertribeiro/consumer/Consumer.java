@@ -1,7 +1,7 @@
 package com.elbertribeiro.consumer;
 
 import com.elbertribeiro.aplicacao.AplicacaoService;
-import com.elbertribeiro.deploy.Deploy;
+import com.elbertribeiro.deploy.DeployDto;
 import com.elbertribeiro.deploy.DeployEvent;
 import com.elbertribeiro.erro.ErroDto;
 import com.elbertribeiro.erro.ErroEvent;
@@ -31,7 +31,7 @@ public class Consumer {
             this.loggerConsumer(payload);
             var aplicacao = aplicacaoService.buscaAplicacao(payload.value());
             logger.info("Endereço de Deploy: {}", aplicacao.getServidorDesenvolvimento().getEndereco());
-            var deploy = new Deploy(aplicacao.getNomeAplicacao(), aplicacao.getServidorDesenvolvimento().getEndereco());
+            var deploy = new DeployDto(aplicacao.getNomeAplicacao(), aplicacao.getServidorDesenvolvimento().getEndereco());
             applicationEventPublisher.publishEvent(new DeployEvent(this, deploy));
         } catch (Exception e) {
             applicationEventPublisher.publishEvent(new ErroEvent(this, new ErroDto(payload.topic(), e.getMessage(), e.fillInStackTrace().toString())));

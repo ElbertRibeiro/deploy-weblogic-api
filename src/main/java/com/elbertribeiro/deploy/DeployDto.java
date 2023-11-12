@@ -1,11 +1,11 @@
 package com.elbertribeiro.deploy;
 
-public class Deploy {
+public class DeployDto {
     private String nomeAplicacao;
     private String servidor;
 
 
-    public Deploy(String nomeAplicacao, String servidor) {
+    public DeployDto(String nomeAplicacao, String servidor) {
         this.nomeAplicacao = nomeAplicacao;
         this.servidor = servidor;
     }
