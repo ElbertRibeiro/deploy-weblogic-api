@@ -2,15 +2,21 @@ package com.elbertribeiro.erro;
 
 import org.springframework.context.ApplicationEvent;
 
-public class ErroEvent extends ApplicationEvent {
-    private final Erro erro;
+import java.io.Serial;
+import java.io.Serializable;
 
-    public ErroEvent(Object source, Erro erro) {
+
+public class ErroEvent extends ApplicationEvent implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 766469612450853108L;
+    private final ErroDto erro;
+
+    public ErroEvent(Object source, ErroDto erro) {
         super(source);
         this.erro = erro;
     }
 
-    public Erro getErro() {
+    public ErroDto getErro() {
         return erro;
     }
 }

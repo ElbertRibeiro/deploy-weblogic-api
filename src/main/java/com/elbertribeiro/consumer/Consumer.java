@@ -3,7 +3,7 @@ package com.elbertribeiro.consumer;
 import com.elbertribeiro.aplicacao.AplicacaoService;
 import com.elbertribeiro.deploy.Deploy;
 import com.elbertribeiro.deploy.DeployEvent;
-import com.elbertribeiro.erro.Erro;
+import com.elbertribeiro.erro.ErroDto;
 import com.elbertribeiro.erro.ErroEvent;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
@@ -34,7 +34,7 @@ public class Consumer {
             var deploy = new Deploy(aplicacao.getNomeAplicacao(), aplicacao.getServidorDesenvolvimento().getEndereco());
             applicationEventPublisher.publishEvent(new DeployEvent(this, deploy));
         } catch (Exception e) {
-            applicationEventPublisher.publishEvent(new ErroEvent(this, new Erro(payload.topic(), e.getMessage(), e.fillInStackTrace().toString())));
+            applicationEventPublisher.publishEvent(new ErroEvent(this, new ErroDto(payload.topic(), e.getMessage(), e.fillInStackTrace().toString())));
         }
     }
 

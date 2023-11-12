@@ -1,11 +1,16 @@
 package com.elbertribeiro.erro;
 
-public class Erro {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class ErroDto implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 3617411304322427135L;
     private String fila;
     private String mensagemErro;
     private String traceErro;
 
-    public Erro(String fila, String mensagemErro, String traceErro) {
+    public ErroDto(String fila, String mensagemErro, String traceErro) {
         this.fila = fila;
         this.mensagemErro = mensagemErro;
         this.traceErro = traceErro;
