@@ -22,7 +22,7 @@ public class ProducerController {
 
     @GetMapping
     public String send() {
-        var message = "teste";
+        var message = "gestao-rh";
         logger.info("Payload enviado: {}", message);
         kafkaTemplate.send(topicName, message);
         return message;
