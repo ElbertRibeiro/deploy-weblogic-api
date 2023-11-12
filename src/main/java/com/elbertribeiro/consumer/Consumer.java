@@ -3,6 +3,8 @@ package com.elbertribeiro.consumer;
 import com.elbertribeiro.aplicacao.AplicacaoService;
 import com.elbertribeiro.deploy.Deploy;
 import com.elbertribeiro.deploy.DeployEvent;
+import com.elbertribeiro.erro.Erro;
+import com.elbertribeiro.erro.ErroEvent;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,11 +28,15 @@ public class Consumer {
 
     @KafkaListener(topics = "${deploy.ambiente.dev}", groupId = "${deploy.grupo-id}")
     public void consumeDev(ConsumerRecord<String, String> payload) {
-        this.loggerConsumer(payload);
-        var aplicacao = aplicacaoService.buscaAplicacao(payload.value());
-        logger.info("Endereço de Deploy: {}", aplicacao.getServidorDesenvolvimento().getEndereco());
-        var deploy = new Deploy(aplicacao.getNomeAplicacao(), aplicacao.getServidorDesenvolvimento().getEndereco());
-        applicationEventPublisher.publishEvent(new DeployEvent(this, deploy));
+        try {
+            this.loggerConsumer(payload);
+            var aplicacao = aplicacaoService.buscaAplicacao(payload.value());
+            logger.info("Endereço de Deploy: {}", aplicacao.getServidorDesenvolvimento().getEndereco());
+            var deploy = new Deploy(aplicacao.getNomeAplicacao(), aplicacao.getServidorDesenvolvimento().getEndereco());
+            applicationEventPublisher.publishEvent(new DeployEvent(this, deploy));
+        } catch (Exception e) {
+            applicationEventPublisher.publishEvent(new ErroEvent(this, new Erro(payload.topic(), e.getMessage(), e.fillInStackTrace().toString())));
+        }
     }
 
     @KafkaListener(topics = "${deploy.ambiente.hom}", groupId = "${deploy.grupo-id}")
