@@ -2,3 +2,9 @@ spring:
   kafka:
     producer:
       bootstrap-servers: localhost:9092
+
+# url para pegar o artefato pela versao
+# curl -u seu-usuario:sua-senha -O "https://nexus.sefa.pa.gov.br/repository/maven-public/br/pa/gov/sefa/ipva-cadastro-facil/1.0.29/ipva-cadastro-facil-1.0.29.war"
+
+# url para pegar o artefato pela utima versao
+#  curl -u seu-usuario:sua-senha -O "https://nexus.sefa.pa.gov.br/repository/maven-public/br/pa/gov/sefa/ipva-cadastro-facil/[RELEASE]/ipva-cadastro-facil-[RELEASE].war"
