@@ -3,9 +3,12 @@ spring:
     producer:
       bootstrap-servers: localhost:9092
 
-servico:
-  nexus:
-    url: https://nexus.sefa.pa.gov.br/repository/maven-public
+togglz:
+  features:
+    FOO:
+      enabled: true
+    BAR:
+      enabled: false
 
 # url para pegar o artefato pela versao
 # curl -u seu-usuario:sua-senha -O "https://nexus.sefa.pa.gov.br/repository/maven-public/br/pa/gov/sefa/ipva-cadastro-facil/1.0.29/ipva-cadastro-facil-1.0.29.war"

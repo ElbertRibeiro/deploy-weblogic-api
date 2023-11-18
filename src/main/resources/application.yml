@@ -22,3 +22,7 @@ deploy:
     dev: deploy.ambiente.dev
     hom: deploy.ambiente.hom
     prod: deploy.ambiente.prod
+
+servico:
+  nexus:
+    url: "https://nexus.sefa.pa.gov.br/repository/maven-public"
