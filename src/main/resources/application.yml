@@ -26,3 +26,15 @@ deploy:
 servico:
   nexus:
     url: "https://nexus.sefa.pa.gov.br/repository/maven-public"
+
+togglz:
+  enabled: true
+  console:
+    enabled: true
+    path: /togglz-console
+    secured: false
+  features:
+    PRICE_INCREASE:
+      enabled: false
+    DESCRIPTION_UPDATE:
+      enabled: false
