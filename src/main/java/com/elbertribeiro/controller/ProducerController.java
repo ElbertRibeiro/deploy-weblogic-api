@@ -10,15 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("event")
-public class ProducerController {
+public record ProducerController(KafkaTemplate<String, String> kafkaTemplate,
+                                 @Value("${topic.name.producer}")
+                                 String topicName) {
     private static final Logger logger = LoggerFactory.getLogger(ProducerController.class);
-    private final KafkaTemplate<String, String> kafkaTemplate;
-    @Value("${topic.name.producer}")
-    private String topicName;
-
-    public ProducerController(KafkaTemplate<String, String> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
 
     @GetMapping
     public String send() {
