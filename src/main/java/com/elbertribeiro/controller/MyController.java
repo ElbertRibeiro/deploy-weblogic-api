@@ -7,13 +7,7 @@ import org.togglz.core.manager.FeatureManager;
 import static com.elbertribeiro.enums.MyFeatures.DESCRIPTION_UPDATE;
 
 @RestController
-public class MyController {
-
-    private final FeatureManager featureManager;
-
-    public MyController(FeatureManager featureManager) {
-        this.featureManager = featureManager;
-    }
+public record MyController(FeatureManager featureManager) {
 
     @GetMapping("/api/some-endpoint")
     public boolean someEndpoint() {

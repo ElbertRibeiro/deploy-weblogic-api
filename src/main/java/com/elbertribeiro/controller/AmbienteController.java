@@ -10,15 +10,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("ambiente")
-public class AmbienteController {
-    private final AmbienteRepository ambienteRepository;
-
-    public AmbienteController(AmbienteRepository ambienteRepository) {
-        this.ambienteRepository = ambienteRepository;
-    }
+public record AmbienteController(AmbienteRepository ambienteRepository) {
 
     @GetMapping
-    public List<Ambiente> getAmbiente(){
+    public List<Ambiente> getAmbiente() {
         return ambienteRepository.findAll();
     }
 }

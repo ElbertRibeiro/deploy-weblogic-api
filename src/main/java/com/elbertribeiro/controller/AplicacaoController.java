@@ -10,12 +10,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("aplicacao")
-public class AplicacaoController {
-    private final AplicacaoRepository aplicacaoRepository;
+public record AplicacaoController(AplicacaoRepository aplicacaoRepository) {
 
-    public AplicacaoController(AplicacaoRepository aplicacaoRepository) {
-        this.aplicacaoRepository = aplicacaoRepository;
-    }
 
     @GetMapping
     public List<Aplicacao> getAmbiente() {
