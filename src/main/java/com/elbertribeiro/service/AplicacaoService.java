@@ -1,6 +1,6 @@
 package com.elbertribeiro.service;
 
-import com.elbertribeiro.entity.Aplicacao;
+import com.elbertribeiro.model.entity.Aplicacao;
 import com.elbertribeiro.repository.AplicacaoRepository;
 import org.springframework.stereotype.Service;
 

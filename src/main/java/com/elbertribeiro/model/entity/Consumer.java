@@ -1,9 +1,9 @@
-package com.elbertribeiro.entity;
+package com.elbertribeiro.model.entity;
 
 import com.elbertribeiro.applicationevent.DeployEvent;
 import com.elbertribeiro.applicationevent.ErroEvent;
-import com.elbertribeiro.dto.DeployDto;
-import com.elbertribeiro.dto.ErroDto;
+import com.elbertribeiro.model.dto.DeployDto;
+import com.elbertribeiro.model.dto.ErroDto;
 import com.elbertribeiro.service.AplicacaoService;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;

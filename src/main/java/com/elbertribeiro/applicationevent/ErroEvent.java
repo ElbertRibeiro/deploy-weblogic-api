@@ -1,6 +1,6 @@
 package com.elbertribeiro.applicationevent;
 
-import com.elbertribeiro.dto.ErroDto;
+import com.elbertribeiro.model.dto.ErroDto;
 import org.springframework.context.ApplicationEvent;
 
 import java.io.Serial;

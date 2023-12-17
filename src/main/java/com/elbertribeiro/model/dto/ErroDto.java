@@ -1,4 +1,4 @@
-package com.elbertribeiro.dto;
+package com.elbertribeiro.model.dto;
 
 public record ErroDto(
         String fila,

@@ -1,6 +1,6 @@
 package com.elbertribeiro.repository;
 
-import com.elbertribeiro.entity.Servidor;
+import com.elbertribeiro.model.entity.Servidor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

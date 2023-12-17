@@ -1,6 +1,6 @@
 package com.elbertribeiro.applicationevent;
 
-import com.elbertribeiro.dto.DeployDto;
+import com.elbertribeiro.model.dto.DeployDto;
 import org.springframework.context.ApplicationEvent;
 
 public class DeployEvent extends ApplicationEvent {

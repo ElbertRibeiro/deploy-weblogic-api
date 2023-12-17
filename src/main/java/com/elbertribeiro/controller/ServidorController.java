@@ -1,6 +1,6 @@
 package com.elbertribeiro.controller;
 
-import com.elbertribeiro.entity.Servidor;
+import com.elbertribeiro.model.entity.Servidor;
 import com.elbertribeiro.repository.ServidorRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.elbertribeiro.entity;
+package com.elbertribeiro.model.entity;
 
 import jakarta.persistence.*;
 

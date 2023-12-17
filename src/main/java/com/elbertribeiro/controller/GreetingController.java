@@ -1,7 +1,7 @@
 package com.elbertribeiro.controller;
 
-import com.elbertribeiro.entity.Greeting;
-import com.elbertribeiro.entity.HelloMessage;
+import com.elbertribeiro.model.entity.Greeting;
+import com.elbertribeiro.model.entity.HelloMessage;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
