@@ -7,8 +7,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DeploySubscriber implements ApplicationListener<DeployEvent> {
-    private static final Logger logger = LoggerFactory.getLogger(DeploySubscriber.class);
+public class DeployService implements ApplicationListener<DeployEvent> {
+    private static final Logger logger = LoggerFactory.getLogger(DeployService.class);
 
     @Override
     public void onApplicationEvent(DeployEvent event) {

@@ -7,8 +7,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ErroSubscriber implements ApplicationListener<ErroEvent> {
-    private static final Logger logger = LoggerFactory.getLogger(ErroSubscriber.class);
+public class ErroService implements ApplicationListener<ErroEvent> {
+    private static final Logger logger = LoggerFactory.getLogger(ErroService.class);
 
 
     @Override
